@@ -2,7 +2,7 @@ import "server-only"
 
 import { unstable_rethrow } from "next/navigation"
 import { prisma } from "./db"
-import logger from "../../utils"
+import { logger } from "@/src/lib/core/utils"
 
 export type Result<T> = { ok: true; data: T } | { ok: false; error: string }
 

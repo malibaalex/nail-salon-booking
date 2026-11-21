@@ -46,5 +46,3 @@ const createLogger = (): pino.Logger => {
 const g = globalThis as unknown as { logger?: pino.Logger }
 export const logger = g.logger ?? createLogger()
 if (nodeEnv !== "production") g.logger = logger
-
-export default logger

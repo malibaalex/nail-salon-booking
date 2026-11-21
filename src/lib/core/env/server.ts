@@ -52,6 +52,7 @@ if (!parsed.success) {
 - Exports the validated and strictly typed environment object.
 - Provides type-safe access configuration across the entire backend application.
  */
-export const env = parsed.data
+const serverEnv = parsed.data
+type ServerEnv = typeof serverEnv
 
-export type Env = typeof env
+export { serverEnv, type ServerEnv }

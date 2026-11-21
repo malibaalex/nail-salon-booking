@@ -1,4 +1,4 @@
-export const HTTP_STATUS = {
+const HTTP_STATUS = {
   SUCCESS: 200,
   CREATED: 201,
   BAD_REQUEST: 400,
@@ -11,7 +11,7 @@ export const HTTP_STATUS = {
   SERVER_ERROR: 500,
 } as const
 
-export const HTTP_MSG = {
+const HTTP_MSG = {
   SUCCESS: "success",
   CREATED: "created successfully",
   BAD_REQUEST: "bad request",
@@ -29,15 +29,6 @@ export const HTTP_MSG = {
   ALREADY_EXISTS: "already exists",
 } as const
 
-export const Roles = {
-  ADMIN: "ADMIN",
-  RECEPTIONIST: "RECEPTIONIST",
-  SALES_SUPPORT: "SALES_SUPPORT",
-  CLIENT: "CLIENT",
-}
+type ResponseKey = keyof typeof HTTP_STATUS & keyof typeof HTTP_MSG
 
-/**
- * Keys that exist in BOTH objects — guarantees a status code AND a default message.
- * Autocomplete shows only valid keys.
- */
-export type ResponseKey = keyof typeof HTTP_STATUS & keyof typeof HTTP_MSG
+export { HTTP_STATUS, HTTP_MSG, type ResponseKey }
