@@ -1,10 +1,10 @@
-import { defineConfig } from "vite-plus";
+import { defineConfig } from "vite-plus"
 
 export default defineConfig({
   staged: {
     "*": "vp check --fix",
   },
-  fmt: {},
+  fmt: { semi: false },
   lint: {
     plugins: ["oxc", "typescript", "unicorn", "nextjs"],
     categories: {
@@ -1249,4 +1249,4 @@ export default defineConfig({
       },
     ],
   },
-});
+})

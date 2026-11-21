@@ -7,13 +7,14 @@ enum RoleType {
 
 model User {
   id                  String        @id @db.Uuid
-  email               String        @unique
+  email               String?       @unique
   name                String
-  phone               String
+  phone               String        @unique
   paymentNumber       String?
   paymentInstructions String        @default("No online payments. Pay in person at the salon or directly to the owner's official number.")
   avatarUrl           String?
   bio                 String?
+  passwordHash        String?
   createdAt           DateTime      @default(now())
   updatedAt           DateTime      @updatedAt
   roles               UserRole[]
@@ -28,4 +29,4 @@ model UserRole {
 
   @@unique([userId, role])
   @@index([role])
-}
+}   
